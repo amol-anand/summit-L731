@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import {IonicPage, MenuController, NavParams, NavController} from 'ionic-angular';
-import {SERVER_URL} from '../../providers/config';
+import {CONTENT_FRAGMENT_COMPONENT} from '../../providers/config';
 import {FAQ} from "../../providers/faq/faq";
 
 @IonicPage()
@@ -29,7 +29,7 @@ export class FAQPage {
 
             this.itemsOrder.forEach(function(itemKey) {
                 var currItem = this.items[itemKey];
-                if(currItem[":type"] === 'weretail/components/content/contentfragment'){
+                if(currItem[":type"] === CONTENT_FRAGMENT_COMPONENT){
                     this.faqs.push({faq: currItem});
                 }
             }, this);
@@ -37,10 +37,6 @@ export class FAQPage {
         }, (err)=>{
             console.error("Error getting Speakers: "+err.message);
         });
-    }
-
-    getImage(image: string): string{
-        return SERVER_URL+image;
     }
 
     toggleGroup(group) {

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import {IonicPage, MenuController, NavParams, NavController} from 'ionic-angular';
 import {Speakers} from "../../providers/speakers/speakers";
-import {SERVER_URL} from '../../providers/config';
+import {SERVER_URL, CONTENT_FRAGMENT_COMPONENT} from '../../providers/config';
 
 @IonicPage()
 @Component({
@@ -29,7 +29,7 @@ export class SummitSpeakersPage {
 
             this.itemsOrder.forEach(function(itemKey) {
                 var currItem = this.items[itemKey];
-                if(currItem[":type"] === 'weretail/components/content/contentfragment'){
+                if(currItem[":type"] === CONTENT_FRAGMENT_COMPONENT){
                     this.speakers.push({speaker: currItem});
                 }
             }, this);

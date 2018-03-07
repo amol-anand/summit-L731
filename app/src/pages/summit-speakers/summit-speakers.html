@@ -30,9 +30,8 @@
                 <h2 class="speaker-name">{{ item.speaker["elements"]["speakerName"]["value"] }}</h2>
                 <p>{{ item.speaker["elements"]["speakerDOB"]["value"] | date : shortDate }}</p>
         </ion-item>
-        <!-- START Add this line to solve Exercise 1.1 -->
+        <!-- Un-comment the line below to solve Activity 2.3 -->
         <img src="{{ getImage(item.speaker['elements']['speakerImage']['value']) }}">
-        <!-- END Add this line to solve Exercise 1.1 -->
         <ion-card-content *ngIf="isGroupShown(item)">
             <p [innerHtml]="item.speaker['elements']['speakerByline']['value']"></p>
         </ion-card-content>
