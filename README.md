@@ -42,3 +42,7 @@ Getting started with ionic & phonegap framework:
 1. Install the provided code into AEM
 
     ` mvn clean install -PautoInstallPackage,autoInstallPackagePublish `
+    
+1. Preview Mobile App:
+
+   ` sudo ionic serve --lab `
